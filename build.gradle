@@ -5,13 +5,13 @@ buildscript {
 	repositories {
 		mavenCentral()
 		maven {
-			url = 'https://github.com/hjparker/systemj-release/raw/master/'
+			url 'https://github.com/hjparker/systemj-release/raw/master/'
 		}
 	}
 	dependencies {
-		classpath group: 'com.systemjtechnology', name: 'systemj', version:'v2.1-133'
-		classpath group: 'com.systemjtechnology', name: 'systemj', version:'v2.1-133', classifier: 'sjrt-base'
-		classpath group: 'com.systemjtechnology', name: 'systemj', version:'v2.1-133', classifier: 'sjrt-desktop'
+		classpath group: 'com.systemjtechnology', name: 'systemj', version:'v2.1-134'
+		classpath group: 'com.systemjtechnology', name: 'systemj', version:'v2.1-134', classifier: 'sjrt-base'
+		classpath group: 'com.systemjtechnology', name: 'systemj', version:'v2.1-134', classifier: 'sjrt-desktop'
 	}
 }
 
