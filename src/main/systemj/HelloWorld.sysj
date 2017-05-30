@@ -1,0 +1,7 @@
+import demo.Demo;
+
+CD->{
+	Demo demo = new Demo();
+	demo.printHelloWorld();
+	pause;
+}

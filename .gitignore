@@ -1,0 +1,6 @@
+.gradle
+*.*~
+*.swp
+/build
+/sjdk
+/systemj
