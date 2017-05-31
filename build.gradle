@@ -15,21 +15,29 @@ buildscript {
 	}
 }
 
+// Once buildscript dependencies are added, a CompileSystemJ task can be created
 task SystemJ(type: com.systemj.CompileSystemJ) {
-//   Libraries needed to compile SystemJ programs
+	//  Libraries needed to compile SystemJ programs
 	classpath buildscript.configurations.classpath
 
-//   Adding options explicitly, value: keys
-//   options "--config-gen": "default.xml", "--silence": "" // An empty string for non-valued options
+	// OPTIONAL: Adding options explicitly, value: keys.
+	//           Give an empty string for the non-valued options (e.g. --silence). 
+	// options "--config-gen": "default.xml", "--silence": "" 
 
-//   Adding directories containing .sysj files, default: src/main/systemj
-//   .sysj files are recursively searched and compiled
-//   target files('path-to-dir')
+	// OPTIONAL: Adding directories containing .sysj files, default: src/main/systemj
+	//           sysj files are recursively searched and compiled 
+	// target files('path-to-dir')
+
 	dependsOn compileJava
 }
 
 task runApp(type: JavaExec) {
+	// Adding required Java classpaths
 	classpath 'build/classes/main', buildscript.configurations.classpath
+
+	// This is the entry point of the SystemJ runtime to run the program.
 	main = 'com.systemj.SystemJRunner'
+
+	// A configuration file is loaded from src/main/configurations/default.xml
 	args 'src/main/configurations/default.xml'
 }
